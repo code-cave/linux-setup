@@ -1,0 +1,40 @@
+[user]
+	name = cro-magnon
+	email = bigfoot958@gmail.com
+
+[core]
+	excludesfile = ~/.git/.gitignore_global
+
+[alias]
+	aca=commit -a --amend
+	brnms=branch -av
+	c=commit
+	ca=commit --amend
+	cm=commit -m
+	cmt=commit -a -m
+	co=checkout
+	cod=checkout develop
+	cor=checkout release
+	com=checkout master
+	ft=fetch
+	lg=log --pretty=format:'\
+%C(white)________________________________________________%n\
+%C(bold cyan)Commit: %H%C(auto)%d%n\
+%C(bold white)Parent: %p%n\
+%C(bold blue)CmTime: %cr (%cD)%n\
+%C(white)Author: %an <%ae>%n\
+%Creset%n%B' --date=relative
+	lgg=log --graph --oneline --abbrev-commit --decorate
+	lgo=log --oneline
+	lgs="!f() { git lg --stat; }; f"
+	pl=pull
+	ps=push
+	t=status
+	s=status
+	st=status
+	submui=submodule update --init
+	rb="!f() { git rebase -i HEAD~$1; }; f"
+	killtag="!f() { git tag -d $1; git push origin :refs/tags/$1; }; f"
+
+[credential]
+	helper = store
